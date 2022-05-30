@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            width: 1400px;
+            height: 100px;
+            background-color: yellow;
+            margin: auto;
+            margin-bottom: 40px;
+        }
+        #container+div{
+            width: 1400px;
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            grid-template-rows: 650px;
+            margin: auto;
+            column-gap: 100px;
+        }
+        div>div:first-child{
+            background-color: red;
+        }
+        div>div:last-child{
+            background-color: green;
+        }
+
+        @media all and (min-width:320px) and (max-width:480px){
+            #container+div{
+            grid-template-columns: repeat(1,1fr);
+            grid-template-rows: repeat(2,325px);
+            row-gap: 50px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="container"><h1>Navigation</h1></div>
+    <div>
+        <div><h2>Left Box</h2></div>
+        <div><h2>Right Box</h2></div>
+    </div>
+</body>
+</html>
